@@ -2,9 +2,7 @@ package ru.plahotin.testproject.validation;
 
 import org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.Validation;
-import javax.validation.Validator;
+import javax.validation.*;
 import javax.validation.constraints.Size;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -15,7 +13,7 @@ public class ValidationTestMain {
 
     public static void main(String[] args) {
 
-        Locale ru = new Locale("ru", "RU");
+        /*Locale ru = new Locale("ru", "RU");
         Locale defLocale = Locale.getDefault();
         Locale.setDefault(ru);
         Validator validator = Validation.byDefaultProvider()
@@ -23,7 +21,9 @@ public class ValidationTestMain {
                 .messageInterpolator(new ParameterMessageInterpolator())
                 .buildValidatorFactory()
                 .getValidator();
-        Locale.setDefault(defLocale);
+        Locale.setDefault(defLocale);*/
+        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+        Validator validator = factory.getValidator();
 
        // Validator validator = Validation.byDefaultProvider().configure().messageInterpolator(new ParameterMessageInterpolator()).buildValidatorFactory().getValidator();
 
@@ -38,16 +38,18 @@ public class ValidationTestMain {
         Student student = new Student("John", 11);
         Student student1 = new Student("afadgfa", 5);
 
+
         List<Student> students = new ArrayList<>();
+
+        ValidatableListWrapper<Student> studentsList = new ValidatableListWrapper<>(students);
+
         students.add(student);
         students.add(student1);
 
        //Set<ConstraintViolation<List<Student>>> violations = validator.validate(students);
 
-        Set<ConstraintViolation<Student>> violations = students.stream().flatMap(s -> validator.validate(s).stream())
-                .collect(Collectors.toSet());
+        Set<ConstraintViolation<ValidatableListWrapper<Student>>> violations = validator.validate(studentsList);
 
-        violations.stream().map(cv -> cv.getMessage() + " : " + cv.getRootBean().getName()).forEach(System.out::println);
 
 
 
