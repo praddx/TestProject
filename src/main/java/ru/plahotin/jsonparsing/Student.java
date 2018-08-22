@@ -1,6 +1,6 @@
 package ru.plahotin.jsonparsing;
 
-import import com.fasterxml.jackson.core.*;
+import com.fasterxml.jackson.annotation.JsonGetter;
 
 public class Student {
 
@@ -34,7 +34,7 @@ public class Student {
         this.age = age;
     }
 
-    @JasonGetter("name")
+    //@JsonGetter("name")
     public String getTheName() {
         return name.toUpperCase();
     }
