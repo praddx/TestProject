@@ -1,10 +1,22 @@
 package ru.plahotin.jsonparsing;
 
+import import com.fasterxml.jackson.core.*;
+
 public class Student {
 
     String name;
 
     int age;
+
+    Gender gender;
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
 
     public String getName() {
         return name;
@@ -22,8 +34,13 @@ public class Student {
         this.age = age;
     }
 
+    @JasonGetter("name")
+    public String getTheName() {
+        return name.toUpperCase();
+    }
+
     @Override
     public String toString() {
-        return name + " : " + age;
+        return name + " : " + gender + " : " + age;
     }
 }
