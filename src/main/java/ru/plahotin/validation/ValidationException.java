@@ -1,4 +1,4 @@
-package ru.plahotin.testproject.validation;
+package ru.plahotin.validation;
 
 public class ValidationException extends RuntimeException {
     private ValidationResult validationResult;

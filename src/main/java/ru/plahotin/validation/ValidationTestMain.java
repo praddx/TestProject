@@ -1,4 +1,4 @@
-package ru.plahotin.testproject.validation;
+package ru.plahotin.validation;
 
 import org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator;
 
@@ -7,7 +7,7 @@ import javax.validation.constraints.Size;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static ru.plahotin.testproject.validation.ValidatorWrapper.checkOnConstraintViolation;
+import static ru.plahotin.validation.ValidatorWrapper.checkOnConstraintViolation;
 
 public class ValidationTestMain {
 

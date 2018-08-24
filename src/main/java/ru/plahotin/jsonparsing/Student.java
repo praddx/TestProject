@@ -1,41 +1,37 @@
 package ru.plahotin.jsonparsing;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-public class Student {
+import java.util.ArrayList;
+import java.util.List;
 
-    String name;
+//@JsonSerialize (using = StudentSerializer.class)
+//@JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
+public class Student extends Person {
 
-    int age;
+    List<String> classes = new ArrayList<>();
 
-    Gender gender;
+    List<Mentor> mentors = new ArrayList<>();
 
-    public Gender getGender() {
-        return gender;
+    public List<Mentor> getMentors() {
+        return mentors;
     }
 
-    public void setGender(Gender gender) {
-        this.gender = gender;
+
+
+    public List<String> getClasses() {
+        return classes;
     }
 
-    public String getName() {
-        return name;
+    public void setClasses(List<String> classes) {
+        this.classes = classes;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
 
     //@JsonGetter("name")
-    public String getTheName() {
+    public String theName() {
         return name.toUpperCase();
     }
 

@@ -1,5 +1,7 @@
-package ru.plahotin.testproject.validation;
+package ru.plahotin.validation;
 
+
+import ru.plahotin.validation.StudentValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

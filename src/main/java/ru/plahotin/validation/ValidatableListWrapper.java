@@ -1,4 +1,4 @@
-package ru.plahotin.testproject.validation;
+package ru.plahotin.validation;
 
 import org.hibernate.validator.internal.metadata.aggregated.ValidatableParametersMetaData;
 

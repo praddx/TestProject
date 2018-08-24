@@ -1,8 +1,10 @@
-package ru.plahotin.testproject.validation;
+package ru.plahotin.validation;
 import org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator;
+import ru.plahotin.validation.ValidationResult;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
+import javax.validation.ValidationException;
 import javax.validation.Validator;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,7 +32,7 @@ class ValidatorWrapper {
         Set<ConstraintViolation<T>> constraintViolations = validator.validate(params);
         if (constraintViolations.size() != 0) {
             ValidationResult validationResult = getViolationResult(constraintViolations);
-            throw new ValidationException(validationResult);
+            throw new ValidationException(String.valueOf(validationResult));
         }
     }
 

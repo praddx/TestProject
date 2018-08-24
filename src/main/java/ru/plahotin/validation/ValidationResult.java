@@ -1,4 +1,4 @@
-package ru.plahotin.testproject.validation;
+package ru.plahotin.validation;
 import java.util.List;
 
 public class ValidationResult {
