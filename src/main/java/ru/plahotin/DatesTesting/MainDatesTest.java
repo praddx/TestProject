@@ -13,6 +13,8 @@ public class MainDatesTest {
         LocalDateTime testDate2 = LocalDateTime.now();
         ZonedDateTime time = ZonedDateTime.now(UTC);
 
+        System.out.println(LocalDate.parse("2018-02-17"));
+
         System.out.println(testDate);
         System.out.println(testDate2);
 

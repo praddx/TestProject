@@ -28,7 +28,6 @@ public class ValidationTestMain {
        // Validator validator = Validation.byDefaultProvider().configure().messageInterpolator(new ParameterMessageInterpolator()).buildValidatorFactory().getValidator();
 
 
-
 /*        Set<ConstraintViolation<Student>> viol = validator.validate(student);
 
         viol.stream().map(cv -> cv.getMessage()).forEach(System.out::println);*/

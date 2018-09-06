@@ -61,5 +61,7 @@ public class CustomDeserializerTest {
         Person student1 = student;
         System.out.println(mapper.writeValueAsString(student1));
         System.out.println(mapper.writerFor(type).writeValueAsString(mentors));
+
+        //System.out.println(mapper.writeValueAsString(st));
     }
 }
