@@ -1,8 +1,7 @@
 package ru.plahotin.collectionstesting;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class CollectionsTestingMain {
@@ -18,11 +17,35 @@ public class CollectionsTestingMain {
 //        if (!b) System.out.println(-1);
         Integer[] ar = {1, 2, 3, 4};
 
-        List<Integer> list = new ArrayList<>();
+        String test = "Blab";
+        char[] ch = test.toCharArray();
+        CharSequence charS = "asdfs";
+
+        System.out.println(test.toLowerCase().chars().distinct().count() == test.length());
+
+//        Integer[] arr = new Integer[]{};
+//        List<Integer> list = new ArrayList<>();
 //        list.addAll(Arrays.asList(ar));
-        if (!list.contains(5))
-        //list.add(5);
-            System.out.println("works");
+//        System.out.println(list.size());
+//        list.remove(new Integer(4));
+//        System.out.println(list.size());
+//        System.out.println(list.toArray(arr).length);
+//
+//        Set<Integer> emptySet = Collections.emptySet();
+//        System.out.println(emptySet.remove(4));
+//
+//
+//        Set<Integer> set = new HashSet<>();
+//        set.addAll(Arrays.asList(ar));
+//        System.out.println(set.size());
+//        set.remove(4);
+//        System.out.println(set.size());
+//        System.out.println(set.toArray(ar).length);
+//        //sList.addAll(Arrays.asList(s.toCharArray()));
+
+//        if (!list.contains(5))
+//        //list.add(5);
+//            System.out.println("works");
 
         //list.forEach(System.out::println);
 
