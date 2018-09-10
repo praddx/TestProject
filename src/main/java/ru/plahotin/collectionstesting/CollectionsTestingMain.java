@@ -17,11 +17,33 @@ public class CollectionsTestingMain {
 //        if (!b) System.out.println(-1);
         Integer[] ar = {1, 2, 3, 4};
 
+
+        System.out.println(Stream.of(ar).count());
+
         String test = "Blab";
         char[] ch = test.toCharArray();
         CharSequence charS = "asdfs";
 
         System.out.println(test.toLowerCase().chars().distinct().count() == test.length());
+
+        List<Integer> firstList = new ArrayList<Integer>();
+        firstList.add(1);
+        firstList.add(2);
+        firstList.add(3);
+
+        List<Integer> secondList = new ArrayList<>();
+        secondList.add(5);
+        secondList.add(6);
+
+        firstList.addAll(secondList);
+        System.out.println(firstList.size());
+
+        Integer[] newArr = firstList.toArray(new Integer[]{});
+        System.out.println("==============");
+
+        for (Integer el : newArr) {
+            System.out.println(el);
+        }
 
 //        Integer[] arr = new Integer[]{};
 //        List<Integer> list = new ArrayList<>();
