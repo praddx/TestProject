@@ -32,6 +32,8 @@ public class ParserMainTest {
 
         String jsonDateClass = "{\"date\":\"bla\"}";
 
+
+
         // dateTestObj = mapper.readValue(jsonDateClass, DateClass.class);
 
         //System.out.println(dateTestObj.getDate());
@@ -41,6 +43,8 @@ public class ParserMainTest {
 
         System.out.println(mapper.writeValueAsString(st));
 
+
+
         //TypeReference<List<Student>> type = new TypeReference<List<Student>>() {};
 
         //String converted = mapper.readValue(jasonString, String.class);
@@ -48,7 +52,8 @@ public class ParserMainTest {
 
        // List<Student> studentsList = mapper.readValue(jasonStudent, type);
 
-        //Gender gender = mapper.readValue(jasonEnum, Gender.class);
+        Gender gender = mapper.readValue(jasonEnum, Gender.class);
+        System.out.printf(gender.description);
 
         //System.out.println(converted);
        // Arrays.stream(students).forEach(System.out::println);
