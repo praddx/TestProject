@@ -33,7 +33,7 @@ public class CollectionsTestingMain {
 //            System.out.println(i);
 //        }
 
-            tryBool("str", true);
+           // tryBool("str", true);
 
 
 //        System.out.println(Stream.of(ar).count());
@@ -100,7 +100,27 @@ public class CollectionsTestingMain {
 //        Stream.of(newAr).forEach(System.out::println);
 //        System.out.println("End printing");
 //        System.out.println((new Integer[]{1})[0]);
-    }
+//        Collections.EMPTY_LIST;
+//        ArrayList
+
+        int a = Integer.parseInt("020");
+
+        System.out.println(a);
+
+
+        List<String> list1 = Collections.emptyList();
+        list1.add("1");
+        list1.add("2");
+        list1.add("3");
+        list1.add("4");
+
+        List<String> list2 = new ArrayList<>();
+        list2.add("5");
+        list2.add("6");
+
+        Collections.copy(list1, list2);
+        list1.stream().forEach(System.out::println);
+     }
 
     public static void tryBool(String s, boolean bool) {
         System.out.printf(!bool ? "bla" : s);
